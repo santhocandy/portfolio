@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #ca4361;
+  --paragraph: #979797;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+
+  40% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+
+  60% {
+    transform: translateY(-5px) translateX(-50%);
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animated-gradient-bg {
+  background: linear-gradient(-45deg, #fff0f3, #e8f4f8, #f0f0f0, #fff5f5);
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+/* Fast Entrance Animation */
+@keyframes blastIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateZ(-800px);
+    letter-spacing: 20px;
+    filter: blur(10px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+    letter-spacing: 0px;
+    filter: blur(0px);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.blast-text {
+  animation: blastIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Navigation Styles */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 40px;
+}
+
+.desktop-nav {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.links {
+  list-style-type: none;
+  display: flex !important;
+  align-items: center;
+  gap: 30px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--primary-color);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filled {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  height: 51px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.filled:hover {
+  background-color: white;
+  border-color: var(--primary-color);
+  color: #ca4361;
+}
+
+.outlined {
+  background-color: white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 51px;
+  width: 51px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.outlined:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Mobile Nav Hidden by Default */
+.mobile-nav {
+  display: none;
+}
+
+.menu {
+  display: none;
+}
+
+/* Responsive */
+@media(max-width: 800px) {
+  header {
+    padding: 20px;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu {
+    display: block;
+    /* Logic handled by React state 'visible' class */
+    height: 100vh;
+    position: fixed;
+    background-color: white;
+    width: 280px;
+    top: 0;
+    right: 0;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 2000;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .visible {
+    transform: translateX(0);
+  }
+
+  .hidden {
+    transform: translateX(100%);
+  }
+
+  .menu .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu .links {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .menu .links li {
+    margin-bottom: 20px;
+  }
+}
