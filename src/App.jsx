@@ -30,7 +30,7 @@ function App() {
 
         {/* Illustration */}
         <section className="illustration" data-aos="fade-up" style={{ marginTop: '50px', textAlign: 'center' }}>
-          <img src="/pictures/illustration.svg" alt="Illustration" style={{ maxWidth: '100%', height: 'auto' }} />
+          <img src={`${import.meta.env.BASE_URL}pictures/illustration.svg`} alt="Illustration" style={{ maxWidth: '100%', height: 'auto' }} />
         </section>
       </main>
       <Footer />

@@ -4,7 +4,7 @@ const About = () => {
             <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
                 <h2 style={{ fontSize: '32px', marginBottom: '20px', color: '#333' }}>About Me</h2>
                 <p style={{ fontSize: '18px', lineHeight: '1.6', color: '#666', marginBottom: '30px' }}>
-                    I am a passionate <strong>Java Developer</strong> with 1 year of professional experience, currently working at <strong style={{ color: '#ca4361' }}>Kombee Technologies</strong>.
+                    I am a passionate <strong>Java Developer</strong> with 1 year of professional experience.
                     I graduated in 2024 from the prestigious <strong>Vellore Institute of Technology (VIT)</strong>, Vellore, India,
                     with a B.Tech in Computer Science and Engineering, specializing in <strong>Data Science</strong>.
                 </p>

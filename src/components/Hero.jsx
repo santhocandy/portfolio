@@ -41,7 +41,7 @@ const Hero = () => {
                 }}>
                     {/* User's Profile Picture */}
                     <img
-                        src="/images/profile1.jpg"
+                        src={`${import.meta.env.BASE_URL}images/profile1.jpg`}
                         alt="Santhoshkumar S"
                         style={{
                             width: '100%',
@@ -86,11 +86,11 @@ const Hero = () => {
                         Java Developer | Software Engineer
                     </h2>
 
-                    <div style={{ marginBottom: '30px' }}>
+                    {/* <div style={{ marginBottom: '30px' }}>
                         <p style={{ fontSize: '18px', color: '#475569', marginBottom: '10px' }}>
                             Currently working at <a href="https://kombee.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#0f172a', textDecoration: 'none', fontWeight: 'bold', borderBottom: '2px solid #ca4361' }}>Kombee Technologies</a>
                         </p>
-                    </div>
+                    </div> */}
 
                     <div style={{ maxWidth: '650px', color: '#334155' }}>
                         <p style={{ fontSize: '20px', lineHeight: '1.6', fontStyle: 'italic', marginBottom: '0' }}>
